@@ -1,8 +1,10 @@
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
-      Home: undefined;
       GetStart: undefined;
+      Home: undefined;
+      Resume: undefined;
+      Register: undefined;
     }
   }
 }

@@ -9,9 +9,9 @@ import { styles } from "./styles";
 const GetStart = () => {
   const navigation = useNavigation();
 
-  function openScreen() {
+  const openScreen = () => {
     navigation.navigate("Home");
-  }
+  };
 
   return (
     <SafeAreaView style={styles.container}>

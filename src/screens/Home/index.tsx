@@ -1,12 +1,19 @@
 import React from "react";
-import { Image, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { styles } from "./styles";
 import Card from "../../components/Card";
 import { iconType, transactionType } from "../../@types/types";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
+  const navigation = useNavigation();
+
+  const closeScreen = () => {
+    navigation.navigate("GetStart");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.containerHeader}>
@@ -23,7 +30,13 @@ const Home = () => {
               <Text style={styles.name}>Railson Mateus</Text>
             </View>
           </View>
-          <MaterialCommunityIcons name="logout" size={32} style={styles.icon} />
+          <TouchableOpacity onPress={closeScreen}>
+            <MaterialCommunityIcons
+              name="logout"
+              size={32}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
         </View>
       </View>
       <ScrollView
