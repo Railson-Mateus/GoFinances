@@ -4,6 +4,7 @@ import THEME from "../../global/styles/theme";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     backgroundColor: THEME.colors.background,
   },
   containerHeader: {
@@ -46,8 +47,7 @@ export const styles = StyleSheet.create({
   },
   containerTransations: {
     position: "absolute",
-    width: "100%",
+    width: 335,
     marginTop: 135,
-    paddingHorizontal: 14,
   },
 });

@@ -1,11 +1,13 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+import Card from "../../components/Card";
+
+import { iconType, transactionType } from "../../@types/types";
 
 import { styles } from "./styles";
-import Card from "../../components/Card";
-import { iconType, transactionType } from "../../@types/types";
-import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -42,7 +44,6 @@ const Home = () => {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ paddingHorizontal: 10 }}
         style={styles.containerTransations}
       >
         <Card
@@ -65,6 +66,7 @@ const Home = () => {
           nameIcon={iconType.dollarSign}
           title="Entradas"
           type={transactionType.overall}
+          last={true}
         />
       </ScrollView>
     </View>
