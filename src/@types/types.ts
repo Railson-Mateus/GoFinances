@@ -14,7 +14,7 @@ export interface CardProps {
   last?: boolean;
 }
 
-export interface IProps {
+export interface IPropsHeader {
   title: string;
 }
 

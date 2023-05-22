@@ -44,6 +44,7 @@ const Home = () => {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
+        decelerationRate={0.5}
         style={styles.containerTransations}
       >
         <Card

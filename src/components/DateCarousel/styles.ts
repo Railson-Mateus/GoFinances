@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     gap: 10,
   },
   text: {
-    width: 160,
+    width: 162,
     textAlign: "center",
     color: THEMES.colors.text_dark,
     fontSize: THEMES.fontSize.ld,
