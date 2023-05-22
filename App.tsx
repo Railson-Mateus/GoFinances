@@ -1,5 +1,3 @@
-import { StyleSheet } from "react-native";
-
 import Loading from "./src/components/Loading";
 
 import Routes from "./src/routes";
@@ -10,6 +8,7 @@ import {
   Poppins_700Bold,
   useFonts,
 } from "@expo-google-fonts/poppins";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -18,7 +17,11 @@ const App: React.FC = () => {
     Poppins_500Medium,
   });
 
-  return !fontsLoaded ? <Loading /> : <Routes />;
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      {fontsLoaded ? <Routes /> : <Loading />}
+    </SafeAreaView>
+  );
 };
 
 export default App;

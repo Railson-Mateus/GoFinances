@@ -1,10 +1,8 @@
 import { Text, View } from "react-native";
 
-import { styles } from "./styles";
+import { IProps } from "../../@types/types";
 
-type IProps = {
-  title: string;
-};
+import { styles } from "./styles";
 
 const Header = ({ title }: IProps) => {
   return (

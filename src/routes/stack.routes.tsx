@@ -14,6 +14,7 @@ const StackRoutes = () => {
     >
       <Screen name="GetStart" component={GetStart} />
       <Screen name="Home" component={TabRoutes} />
+      <Screen name="Resume" component={TabRoutes} />
     </Navigator>
   );
 };

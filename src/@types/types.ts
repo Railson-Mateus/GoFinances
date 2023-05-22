@@ -11,6 +11,11 @@ export interface CardProps {
   amount: string;
   lastTransaction: string;
   nameIcon: iconType;
+  last?: boolean;
+}
+
+export interface IProps {
+  title: string;
 }
 
 export enum transactionType {

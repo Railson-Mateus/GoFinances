@@ -12,6 +12,7 @@ const Card = ({
   nameIcon,
   title,
   type,
+  last,
 }: CardProps) => {
   let corIcone = THEME.colors.success;
 
@@ -28,6 +29,7 @@ const Card = ({
         {
           backgroundColor:
             type === "overall" ? THEME.colors.secondary : THEME.colors.shape,
+          marginRight: last ? 0 : 16,
         },
       ]}
     >
