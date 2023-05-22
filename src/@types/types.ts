@@ -18,6 +18,11 @@ export interface IProps {
   title: string;
 }
 
+export interface IPropsCategory {
+  category: string;
+  value: string;
+}
+
 export enum transactionType {
   entry = "entry",
   out = "out",
