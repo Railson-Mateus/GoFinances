@@ -1,58 +1,48 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 import Card from "../../components/Card";
+import CardExpenses from "../../components/CardExpenses";
 
 import { iconType, transactionType } from "../../@types/types";
 
 import { styles } from "./styles";
 
-import{SafeAreaView,FlatList, StyleSheet, StatusBar} from 'react-native';
-
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
     title: "Desenvolvimento de site",
-    amount: "12.000,00",
+    value: "12.000,00",
     category: "Vendas",
-    icon: "",
-    data: "13/04/2020"
+    icon: "Dolar",
+    date: "13/04/2020",
   },
-   {
-     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-     title: "Hamburgueria Pizzy",
-     amount: "59,00",
-     category: "Alimentação",
-     icon: "",
-     data: "10/04/2020"
-   },
-   {
+  {
+    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+    title: "Hamburgueria Pizzy",
+    value: "-59,00",
+    category: "Alimentação",
+    icon: "coffe",
+    date: "10/04/2020",
+  },
+  {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "Aluguel do apartamento"
-   },
+    title: "Aluguel do apartamento",
+    value: "-1.200,00",
+    category: "Casa",
+    icon: "home",
+    date: "27/03/2020",
+  },
 ];
-
-type ItemProps = {title: string};
-
-const Item = ({title}: ItemProps) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
-
-const App = () => {
-  return(
-    <SafeAreaView style={styles.container}>
-      <FlatList
-      data = {DATA}
-      renderItem={({item}) => <Item title={item.title} />}
-      keyExtractor={item => item.id}
-      />
-    </SafeAreaView>
-  );
-};  
 
 const Home = () => {
   const navigation = useNavigation();
@@ -115,6 +105,25 @@ const Home = () => {
           last={true}
         />
       </ScrollView>
+
+      <View style={styles.listExpenses}>
+        <Text style={styles.title}>Listagem</Text>
+        <FlatList
+          data={DATA}
+          renderItem={({ item }) => (
+            <CardExpenses
+              category={item.category}
+              date={item.date}
+              title={item.title}
+              value={item.value}
+              icon={item.icon}
+            />
+          )}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+          initialNumToRender={10}
+        />
+      </View>
     </View>
   );
 };

@@ -23,6 +23,14 @@ export interface IPropsCategory {
   value: string;
 }
 
+export interface IPropsCardExpenses {
+  title: string;
+  value: string;
+  icon: string;
+  category: string;
+  date: string;
+}
+
 export enum transactionType {
   entry = "entry",
   out = "out",
