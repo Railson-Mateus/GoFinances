@@ -26,9 +26,10 @@ const CardExpenses = ({
         <Text style={[styles.value, textStyle]}>R$ {value}</Text>
       </View>
       <View style={styles.cardFooter}>
-        <Text style={styles.icon}>
-          {icon} {category}
-        </Text>
+        <View style={styles.icon}>
+          <Feather name={icon} size={24} color="#969cb2" />
+          <Text style={styles.textCategory}>{category}</Text>
+        </View>
         <Text style={styles.date}>{date}</Text>
       </View>
     </View>

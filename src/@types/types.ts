@@ -3,6 +3,7 @@ import { TouchableOpacityProps } from "react-native/types";
 export interface IButton extends TouchableOpacityProps {
   text: string;
   type?: string;
+  icon?: string;
 }
 
 export interface CardProps {

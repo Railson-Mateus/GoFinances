@@ -31,9 +31,15 @@ export const styles = StyleSheet.create({
   cardFooter: {
     marginTop: 10,
     flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
   },
   icon: {
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 5,
+  },
+  textCategory: {
     fontSize: THEME.fontSize.sm,
     color: THEME.colors.text,
   },
