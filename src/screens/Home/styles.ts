@@ -50,4 +50,15 @@ export const styles = StyleSheet.create({
     width: 335,
     marginTop: 135,
   },
-});
+
+  item:{
+    backgroundColor: "green",
+      padding: 20,
+      marginVertical: 8,
+      marginHorizontal: 16,
+    },
+    title:{
+      fontSize: 32,
+    },
+  });
+

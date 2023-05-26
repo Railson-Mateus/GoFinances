@@ -9,6 +9,51 @@ import { iconType, transactionType } from "../../@types/types";
 
 import { styles } from "./styles";
 
+import{SafeAreaView,FlatList, StyleSheet, StatusBar} from 'react-native';
+
+const DATA = [
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+    title: "Desenvolvimento de site",
+    amount: "12.000,00",
+    category: "Vendas",
+    icon: "",
+    data: "13/04/2020"
+  },
+   {
+     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+     title: "Hamburgueria Pizzy",
+     amount: "59,00",
+     category: "Alimentação",
+     icon: "",
+     data: "10/04/2020"
+   },
+   {
+    id: "58694a0f-3da1-471f-bd96-145571e29d72",
+    title: "Aluguel do apartamento"
+   },
+];
+
+type ItemProps = {title: string};
+
+const Item = ({title}: ItemProps) => (
+  <View style={styles.item}>
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
+
+const App = () => {
+  return(
+    <SafeAreaView style={styles.container}>
+      <FlatList
+      data = {DATA}
+      renderItem={({item}) => <Item title={item.title} />}
+      keyExtractor={item => item.id}
+      />
+    </SafeAreaView>
+  );
+};  
+
 const Home = () => {
   const navigation = useNavigation();
 
