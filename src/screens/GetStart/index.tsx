@@ -10,7 +10,7 @@ const GetStart = () => {
   const navigation = useNavigation();
 
   const openScreen = () => {
-    navigation.navigate("Home");
+    navigation.navigate("TabRoutes");
   };
 
   return (

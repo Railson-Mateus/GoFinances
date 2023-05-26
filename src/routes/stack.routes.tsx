@@ -13,8 +13,7 @@ const StackRoutes = () => {
       screenOptions={{ headerShown: false }}
     >
       <Screen name="GetStart" component={GetStart} />
-      <Screen name="Home" component={TabRoutes} />
-      <Screen name="Resume" component={TabRoutes} />
+      <Screen name="TabRoutes" component={TabRoutes} />
     </Navigator>
   );
 };

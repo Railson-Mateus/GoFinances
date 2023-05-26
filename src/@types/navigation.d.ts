@@ -5,6 +5,7 @@ export declare global {
       Home: undefined;
       Resume: undefined;
       Register: undefined;
+      TabRoutes: undefined;
     }
   }
 }
